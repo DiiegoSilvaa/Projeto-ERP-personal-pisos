@@ -28,29 +28,65 @@ O grupo escolheu a empresa porque ela já possui um site que precisa de melhoria
 
 ---
 
-## 4. Problemas e necessidades identificados
-* **Problema:** Problemas não identificados durante a visita técnica pré-obra.  
-  *Consequência:* Retrabalho durante a instalação ou execução do serviço.
-* **Problema:** Processos de administração ou venda não seguidos corretamente.  
-  *Consequência:* Retrabalho e possíveis atrasos nos processos.
-* **Problema:** Informações duplicadas durante a reestruturação do sistema.  
-  *Consequência:* Necessidade de reorganização e conferência dos dados.
-* **Problema:** Possibilidade de perda de informações.  
-  *Consequência:* Dificuldade para manter todos os dados organizados e disponíveis.
-* **Problema:** Uso de planilhas junto aos sistemas.  
-  *Consequência:* Necessidade de modernização e integração dos controles.
-* **Problema:** Controle de estoque sem colaborador específico.  
-  *Consequência:* Maior dificuldade e trabalho para acompanhar o estoque.
-* **Problema:** Informações dependentes de cadastro correto.  
-  *Consequência:* Possibilidade de dificuldades no acompanhamento quando há falhas no cadastro.
+## 4. Identifique os processos de negócio.
+Cliente -- Solicita orçamento -- Projeto -- Agendamento de visita -- Medição -- Compra de produtos -- Pagamento -- Entrega --Montagem/Instalação -- Atualização do estoque. 
+ 
+* **Quem participa?**
+Cliente, vendedor, designer de interiores, montador e financeiro. 
+* **O que inicia o processo?** 
+O cliente solicita um orçamento ou procura um produto específico. 
+* **O que acontece?** 
+É realizado o orçamento, o projeto é definido e, quando necessário, é agendada uma visita para realizar a medição do ambiente. Após a aprovação, ocorre a compra dos produtos, o pagamento, a entrega e a montagem/instalação. 
+* **Que informação é gerada?** 
+Orçamento, medidas do ambiente, pedido de venda, produtos vendidos, nota fiscal, comprovante de pagamento e atualização do estoque. 
+* **Qual é o resultado?** 
+O ambiente do cliente é montado/instalado e a venda é concluída. 
 
 ---
 
-## 5. Processos de negócio
-* **Fluxo Geral:** Cliente -> Solicita orçamento -> Projeto -> Agendamento de visita -> Medição -> Compra de produtos -> Pagamento -> Entrega -> Montagem/Instalação -> Atualização do estoque.
-* **Participantes:** Cliente, vendedor, designer de interiores, montador e financeiro.
-* **Gatilho Inicial:** O cliente solicita um orçamento ou procura um produto específico.
-* **Informações Geradas:** Orçamento, medidas do ambiente, pedido de venda, produtos vendidos, nota fiscal, comprovante de pagamento e atualização do estoque.
+## 5. Identifique os problemas e necessidades
+* **Onde existe retrabalho?**  
+Nas obras, quando acontece algum problema em uma instalação ou serviço que não foi considerado a possibilidade durante a visita técnica realizada pré obra; 
+Na administração ou venda quando não foram seguidos todos os processos necessários. 
+* **Existem informações duplicadas?**
+Poucas, mas existem, pois a loja está reestruturando o sistema. 
+* **Existem informações perdidas?**
+Às vezes, por isso a loja está modernizando o sistema. 
+* **A empresa utiliza planilhas?**
+Sim, ela utiliza. 
+* **Existem controles manuais?*
+Poucos, a empresa investiu mais nos sistemas de ERP e planilhas e agora está modernizando o sistema. 
+* **Os setores compartilham informações?**
+Sim, compartilham. 
+* **É difícil encontrar informações?**
+De acordo com as informações passadas pelo dono não é. 
+* **Existem erros de cadastro?**
+Raramente. 
+* **É difícil acompanhar estoque, vendas, clientes ou funcionários?**
+Não, desde que esteja tudo devidamente cadastrado. Porém hoje o estoque é algo que dá um pouco mais de trabalho pois a empresa não possui um colaborador específico organizar/catalogar. 
+* **Existem problemas para gerar relatórios?**
+Não. 
+* **PROBLEMAS E NECESSIDADES**
+* **Problema**: Problemas não identificados durante a visita técnica pré-obra. 
+* **Consequência**: Retrabalho durante a instalação ou execução do serviço; 
+
+* **Problema**: Processos de administração ou venda não seguidos corretamente. 
+* **Consequência**: Retrabalho e possíveis atrasos nos processos; 
+
+* **Problema**: Informações duplicadas durante a reestruturação do sistema. 
+* **Consequência**: Necessidade de reorganização e conferência dos dados; 
+
+* **Problema**: Possibilidade de perda de informações. 
+* **Consequência:** Dificuldade para manter todos os dados organizados e disponíveis; 
+
+* **Problema**: Uso de planilhas junto aos sistemas. 
+* **Consequência**: Necessidade de modernização e integração dos controles; 
+
+* **Problema**: Controle de estoque sem colaborador específico. 
+* **Consequência**: Maior dificuldade e trabalho para acompanhar o estoque; 
+
+* **Problema**: Informações dependentes de cadastro correto. 
+* **Consequência**: Possibilidade de dificuldades no acompanhamento quando há falhas no cadastro.
 
 ---
 
@@ -84,12 +120,56 @@ O grupo escolheu a empresa porque ela já possui um site que precisa de melhoria
 
 ---
 
-## 9. Restrições e políticas organizacionais
-* **Aprovações Operacionais:** Apenas Gerentes/Proprietários podem autorizar descontos superiores a 5%, exclusões de dados e métodos especiais de pagamento (como boleto).
-* **Edição de Cadastros:** Clientes podem editar seus dados cadastrais, mas a exclusão definitiva só é feita pela gerência.
-* **Descontos:** Limite fixado entre 5% e 10% baseado no valor total da compra.
-* **Políticas de Estoque:** Conferência física mensal e reposição conforme as vendas efetuadas.
-* **Conformidade Legal:** Coleta e tratamento de dados adequados à LGPD.
+## 9. Identifique as restrições e políticas organizacionais
+* **Quem pode aprovar uma operação?**
+Apenas os Gerente/Dono podem realizar operações. 
+
+* **Quem pode alterar determinado cadastro? **
+
+Todos os cadastros podem ser editados pelos clientes, porém somente o gerente pode excluir as informações. 
+
+  
+
+Limites de desconto? 
+
+Toda compra possui um limite de 5 à10% de desconto baseado no valor total da compra. 
+
+  
+
+Condições de pagamento? 
+
+É possível pagar a vista ou parcelado (sendo no parcelado necessário um sinal de 35% e o restante pode ser feito em até 10x sem juros). 
+
+  
+
+Regras de cancelamento 
+
+As regras de cancelamento seguem o Código de Defesa do Consumidor, sendo 7 dias para devolução total do valor gasto e caso já tenha havido algum valor gasto com compra de material, isso será negociado diretamente com o cliente. 
+ 
+
+Políticas de estoque 
+
+O estoque é conferido uma vez por mês e é abastecido conforme fazem as vendas, pois a loja não trabalha com estoque de todos os produtos. 
+
+  
+
+Regras de acesso às informações 
+
+A loja segue a LGPD - Lei Geral de Proteção de Dados, ou seja, ela informa para que os dados dos clientes serão utilizados, coleta apenas as informações necessárias e possui medidas de segurança contra o vazamento de dados. 
+
+  
+
+Existe alguma decisão da empresa que precisa ser respeitada pelo 
+
+sistema?  
+
+Sim, algumas coisas são permitidas apenas com autorização do gerente. Como: 
+
+Desconto maior que 5%; 
+
+Exclusão de dados do sistema; 
+
+Outros métodos de pagamento, como boleto. 
 
 ---
 
