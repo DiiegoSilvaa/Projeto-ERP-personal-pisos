@@ -9,6 +9,8 @@
 * Guilherme de Aquino Campos - RGM: 48183939
 * Julia Lafaelly Frazão Nunes - RGM: 48127507
 * Marcos Murilo Fernandes da Silva - RGM: 48159786
+* Jhenifer Rosa Cambell - RGM: 47794992
+* Miguel Galego Meira - RGM: 47963662
 
 ---
 
