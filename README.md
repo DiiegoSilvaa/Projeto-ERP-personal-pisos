@@ -54,7 +54,7 @@ Poucas, mas existem, pois a loja está reestruturando o sistema.
 Às vezes, por isso a loja está modernizando o sistema. 
 * **A empresa utiliza planilhas?**
 Sim, ela utiliza. 
-* **Existem controles manuais?*
+* **Existem controles manuais?**
 Poucos, a empresa investiu mais nos sistemas de ERP e planilhas e agora está modernizando o sistema. 
 * **Os setores compartilham informações?**
 Sim, compartilham. 
@@ -124,56 +124,33 @@ Não.
 * **Quem pode aprovar uma operação?**
 Apenas os Gerente/Dono podem realizar operações. 
 
-* **Quem pode alterar determinado cadastro? **
-
+* **Quem pode alterar determinado cadastro?**
 Todos os cadastros podem ser editados pelos clientes, porém somente o gerente pode excluir as informações. 
 
-  
-
-Limites de desconto? 
-
+* **Limites de desconto?**
 Toda compra possui um limite de 5 à10% de desconto baseado no valor total da compra. 
 
-  
-
-Condições de pagamento? 
-
+* **Condições de pagamento?**
 É possível pagar a vista ou parcelado (sendo no parcelado necessário um sinal de 35% e o restante pode ser feito em até 10x sem juros). 
 
-  
-
-Regras de cancelamento 
-
+* **Regras de cancelamento**
 As regras de cancelamento seguem o Código de Defesa do Consumidor, sendo 7 dias para devolução total do valor gasto e caso já tenha havido algum valor gasto com compra de material, isso será negociado diretamente com o cliente. 
- 
 
-Políticas de estoque 
-
+* **Políticas de estoque**
 O estoque é conferido uma vez por mês e é abastecido conforme fazem as vendas, pois a loja não trabalha com estoque de todos os produtos. 
 
-  
-
-Regras de acesso às informações 
-
+* **Regras de acesso às informações**
 A loja segue a LGPD - Lei Geral de Proteção de Dados, ou seja, ela informa para que os dados dos clientes serão utilizados, coleta apenas as informações necessárias e possui medidas de segurança contra o vazamento de dados. 
 
-  
-
-Existe alguma decisão da empresa que precisa ser respeitada pelo 
-
-sistema?  
-
+* **Existe alguma decisão da empresa que precisa ser respeitada pelo sistema?**
 Sim, algumas coisas são permitidas apenas com autorização do gerente. Como: 
-
-Desconto maior que 5%; 
-
-Exclusão de dados do sistema; 
-
-Outros métodos de pagamento, como boleto. 
+**Desconto maior que 5%;**
+**Exclusão de dados do sistema;**
+**Outros métodos de pagamento, como boleto.**
 
 ---
 
-## 10. Fluxogramas
+## 10. Fluxograma dos principais processos
 ![Fluxograma de Processos](img/fluxograma.png)
 
 ---
@@ -228,27 +205,68 @@ Outros métodos de pagamento, como boleto.
 ---
 
 ## 13. Atributos
-* **Pessoa:** `CPF (PK)` – `Nome` – `Email` – `Telefone` – `Data_Nascimento`
+* **Pessoa:** `Nome` – `Email` – `Telefone` – `Data_Nascimento` – `CPF (PK)`
 * **Cliente:** `ID_Cliente (PK)` – `Endereço` – `CPF (FK)`
-* **Funcionário:** `ID_Funcionário (PK)` – `Cargo` – `Salario` – `Setor` – `CPF (FK)`
+* **Funcionário:** `ID_Funcionário (PK)` – `Cargo` – `Salario` – `CPF (FK)` – `Setor`
 * **Fornecedor:** `Código_Fornecedor (PK)` – `Matéria-Prima` – `Custo_Unitario` – `CPF (FK)`
 * **Compra:** `ID_Compra (PK)` – `Código_Fornecedor (FK)` – `Total_Gasto`
 * **Produto:** `Código_Produto (PK)` – `Descrição` – `Valor_Unitario`
 * **Estoque:** `Código_Produto (PK/FK)` – `Informação` – `Quantidade_De_Cada_Produto` – `Abastecimento`
+* **Contém:** `Código_Pedido (FK)` – `Código_Produto (FK)` – `Quantidade_De_Produtos`
 * **Pedido:** `Código_Pedido (PK)` – `Data_De_Entrega` – `Pagamento_Total` – `Acréscimos`
 * **Realiza:** `ID_Cliente (FK)` – `Código_Pedido (FK)` – `Subtotal`
-* **Contém:** `Código_Pedido (FK)` – `Código_Produto (FK)` – `Quantidade_De_Produtos`
 
 ---
 
 ## 14. Relacionamentos
 
-* **Pessoa – Cliente / Funcionário / Fornecedor:** Relacionamento de Especialização/Herança.
-* **Cliente – Pedido (via "Realiza"):** O cliente realiza um ou mais pedidos.
-* **Pedido – Produto (via "Contém"):** O pedido contém um ou múltiplos produtos registrados.
-* **Fornecedor – Compra:** O fornecedor fornece produtos para as ordens de compra.
-* **Compra – Produto:** As compras alimentam o catálogo e entrada de produtos.
-* **Produto – Estoque:** Associação 1:1 entre o produto e suas informações de saldo de estoque.
+* **Pessoa – Cliente**
+  * **Entidades Relacionadas:** Pessoa e Cliente
+  * **Tipo de Relacionamento:** Entidade Forte - Entidade Fraca (Especialização / Herança)
+  * **Descrição:** A entidade Cliente deriva da entidade genérica Pessoa.
+  * **Atributo de Ligação:** `CPF` (Chave Primária em Pessoa e Chave Estrangeira em Cliente)
+
+* **Pessoa – Funcionário**
+  * **Entidades Relacionadas:** Pessoa e Funcionário
+  * **Tipo de Relacionamento:** Entidade Forte - Entidade Fraca (Especialização / Herança)
+  * **Descrição:** A entidade Funcionário deriva da entidade genérica Pessoa.
+  * **Atributo de Ligação:** `CPF` (Chave Primária em Pessoa e Chave Estrangeira em Funcionário)
+
+* **Pessoa – Fornecedor**
+  * **Entidades Relacionadas:** Pessoa e Fornecedor
+  * **Tipo de Relacionamento:** Entidade Forte - Entidade Fraca (Especialização / Herança)
+  * **Descrição:** Vincula o cadastro do fornecedor à pessoa física responsável.
+  * **Atributo de Ligação:** `CPF` (Chave Primária em Pessoa e Chave Estrangeira em Fornecedor)
+
+* **Cliente – Pedidos (via "Realiza")**
+  * **Entidades Relacionadas:** Cliente e Pedido (ligadas através da entidade associativa Realiza)
+  * **Tipo de Relacionamento:** Entidade Associativa
+  * **Descrição:** Registra quais pedidos foram realizados por determinado cliente, armazenando o subtotal.
+  * **Atributos de Ligação:** `ID_Cliente (FK)` e `Código_Pedido (FK)`
+
+* **Pedido – Produto (via "Contém")**
+  * **Entidades Relacionadas:** Pedido e Produto (ligadas através da entidade associativa Contém)
+  * **Tipo de Relacionamento:** Entidade Associativa
+  * **Descrição:** Associa os produtos que fazem parte de cada pedido e a respectiva quantidade de itens.
+  * **Atributos de Ligação:** `Código_Pedido (FK)` e `Código_Produto (FK)`
+
+* **Fornecedor – Compra**
+  * **Entidades Relacionadas:** Fornecedor e Compra
+  * **Tipo de Relacionamento:** Entidade Forte - Entidade Fraca
+  * **Descrição:** Registra as compras efetuadas junto a um fornecedor e o total gasto.
+  * **Atributo de Ligação:** `Código_Fornecedor` (PK em Fornecedor e FK em Compra)
+
+* **Compra – Produto**
+  * **Entidades Relacionadas:** Compra e Produto
+  * **Tipo de Relacionamento:** Entidades Fortes (Relacionadas entre si)
+  * **Descrição:** Associa as aquisições/compras efetuadas aos produtos do catálogo que alimentam o estoque.
+  * **Atributo de Ligação:** `Código_Produto` (Ligação entre as ordens de compra e os produtos)
+
+* **Produto – Estoque**
+  * **Entidades Relacionadas:** Produto e Estoque
+  * **Tipo de Relacionamento:** Entidade Forte - Entidade Fraca
+  * **Descrição:** Associa as informações físicas de estoque, quantidade e periodicidade de abastecimento ao produto correspondente.
+  * **Atributo de Ligação:** `Código_Produto` (PK em Produto e PK/FK em Estoque)
 
 ---
 
@@ -269,15 +287,19 @@ Outros métodos de pagamento, como boleto.
 
 ## 17. Justificativas técnicas das principais decisões de modelagem
 
-1. **Adoção da Especialização/Herança com a Entidade `Pessoa`:**  
-   Permite centralizar os dados cadastrais básicos de pessoas físicas (`CPF`, `Nome`, `Email`, `Telefone`) evitando campos duplicados entre clientes, funcionários e fornecedores.
-2. **Uso das Entidades Associativas `Contém` e `Realiza`:**  
-   O relacionamento N:M entre `Pedido` e `Produto` gerou a entidade `Contém` para armazenar a `Quantidade_De_Produtos` de cada item. Da mesma forma, `Realiza` armazena o `Subtotal` gerado pelo cliente.
-3. **Separação entre `Produto` e `Estoque`:**  
-   A Personal Pisos realiza controle mensal/semanal e vendas sob encomenda. Isolar o `Estoque` em uma estrutura 1:1 permite gerenciar lotes e quantidades sem alterar o cadastro fixo do `Produto`.
-4. **Definição de Chave Primária em `Produto`:**  
-   Corrigiu-se a identificação do `Código_Produto` para Chave Primária (`PK`), garantindo a integridade referencial nas tabelas associativas.
+1. **Modelagem de `Pessoa` como Entidade Forte e `Cliente`/`Funcionário`/`Fornecedor` como Entidades Fracas:**  
+   A entidade forte `Pessoa` centraliza os atributos genéricos (`CPF`, `Nome`, `Email`, `Telefone`, `Data_Nascimento`)[cite: 4]. As entidades `Cliente`, `Funcionário` e `Fornecedor` conectam-se a ela utilizando o `CPF` como Chave Estrangeira (FK)[cite: 4], garantindo a integridade dos cadastros no banco de dados e evitando a duplicação de informações pessoais.
 
+2. **Criação das Entidades Associativas (`Contém` e `Realiza`):**  
+   Para resolver os relacionamentos de múltiplos registros sem gerar duplicidade de dados:
+   * **`Contém`:** Surge da relação entre `Pedido` e `Produto` para armazenar a `Quantidade_De_Produtos` comprada de cada item no pedido[cite: 4].
+   * **`Realiza`:** Conecta `Cliente` a `Pedido`, armazenando o atributo próprio `Subtotal` gerado pela transação do cliente.
+
+3. **Separação entre `Produto` (Entidade Forte) e `Estoque` (Entidade Fraca / Relação 1:1):**  
+   O cadastro do `Produto` mantém apenas dados fixos do catálogo (`Descrição`, `Valor_Unitario`)[cite: 4]. O `Estoque` é tratado de forma vinculada (1:1) para controlar dados operacionais e dinâmicos (`Informação`, `Quantidade_De_Cada_Produto`, `Abastecimento`)[cite: 4], permitindo atualizar lotes e saldos sem alterar as especificações fixas do produto.
+
+4. **Definição de `Código_Produto` como Chave Primária (PK) em `Produto`:**  
+   Garante que a entidade `Produto` seja independente (entidade forte) e que seu código identificador único possa ser referenciado corretamente como Chave Estrangeira (FK) nas entidades associativas (`Contém`, `Compra`) e no `Estoque`[cite: 4].
 ---
 
 ## 18. Conclusão
