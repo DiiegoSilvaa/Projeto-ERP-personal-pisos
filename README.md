@@ -4,7 +4,7 @@
 * Bruna Soares de Almeida - RGM: 47552158
 * Caua Hernandes Honorato - RGM: 47863617
 * Diego Silva - RGM: 47855533
-* Esther Mari de Souza - RGM: 47487135
+* Ester Mari de Souza - RGM: 47487135
 * Felipe Dyonisio da Silva Veiga - RGM: 45698732
 * Guilherme de Aquino Campos - RGM: 48183939
 * Julia Lafaelly Frazão Nunes - RGM: 48127507
