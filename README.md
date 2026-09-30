@@ -222,19 +222,19 @@ Sim, algumas coisas são permitidas apenas com autorização do gerente. Como:
 
 * **Pessoa – Cliente**
   * **Entidades Relacionadas:** Pessoa e Cliente
-  * **Tipo de Relacionamento:** Entidade Forte - Entidade Fraca (Especialização / Herança)
-  * **Descrição:** A entidade Cliente deriva da entidade genérica Pessoa.
+  * **Tipo de Relacionamento:** Entidade Forte → Entidade Fraca
+  * **Descrição:** A entidade Cliente depende da entidade genérica Pessoa para existência dos dados pessoais.
   * **Atributo de Ligação:** `CPF` (Chave Primária em Pessoa e Chave Estrangeira em Cliente)
 
 * **Pessoa – Funcionário**
   * **Entidades Relacionadas:** Pessoa e Funcionário
-  * **Tipo de Relacionamento:** Entidade Forte - Entidade Fraca (Especialização / Herança)
-  * **Descrição:** A entidade Funcionário deriva da entidade genérica Pessoa.
+  * **Tipo de Relacionamento:** Entidade Forte → Entidade Fraca
+  * **Descrição:** A entidade Funcionário depende da entidade genérica Pessoa para existência dos dados pessoais.
   * **Atributo de Ligação:** `CPF` (Chave Primária em Pessoa e Chave Estrangeira em Funcionário)
 
 * **Pessoa – Fornecedor**
   * **Entidades Relacionadas:** Pessoa e Fornecedor
-  * **Tipo de Relacionamento:** Entidade Forte - Entidade Fraca (Especialização / Herança)
+  * **Tipo de Relacionamento:** Entidade Forte → Entidade Fraca
   * **Descrição:** Vincula o cadastro do fornecedor à pessoa física responsável.
   * **Atributo de Ligação:** `CPF` (Chave Primária em Pessoa e Chave Estrangeira em Fornecedor)
 
@@ -252,7 +252,7 @@ Sim, algumas coisas são permitidas apenas com autorização do gerente. Como:
 
 * **Fornecedor – Compra**
   * **Entidades Relacionadas:** Fornecedor e Compra
-  * **Tipo de Relacionamento:** Entidade Forte - Entidade Fraca
+  * **Tipo de Relacionamento:** Entidade Forte → Entidade Fraca
   * **Descrição:** Registra as compras efetuadas junto a um fornecedor e o total gasto.
   * **Atributo de Ligação:** `Código_Fornecedor` (PK em Fornecedor e FK em Compra)
 
@@ -264,7 +264,7 @@ Sim, algumas coisas são permitidas apenas com autorização do gerente. Como:
 
 * **Produto – Estoque**
   * **Entidades Relacionadas:** Produto e Estoque
-  * **Tipo de Relacionamento:** Entidade Forte - Entidade Fraca
+  * **Tipo de Relacionamento:** Entidade Forte → Entidade Fraca
   * **Descrição:** Associa as informações físicas de estoque, quantidade e periodicidade de abastecimento ao produto correspondente.
   * **Atributo de Ligação:** `Código_Produto` (PK em Produto e PK/FK em Estoque)
 
