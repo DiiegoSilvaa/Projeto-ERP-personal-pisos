@@ -306,3 +306,54 @@ Sim, algumas coisas são permitidas apenas com autorização do gerente. Como:
 
 ## 18. Conclusão
 Esta entrega estabelece o Modelo Conceitual formal para a Personal Pisos, estruturando os requisitos coletados em entidades, atributos, relacionamentos e regras de negócio. O modelo atende às necessidades operacionais e de gestão da empresa e serve como base sólida para a próxima fase do projeto (Modelo Lógico, Normalização e DDL em Banco de Dados Relacional).
+
+## 19. Checklist
+[x] *Empresa caracterizada* — Personal Pisos (Design de Interiores e Acabamentos, modelo híbrido, setores e dados descritos).
+[x] *Escolha justificada* — Apresentada no Item 3 (site precisando de melhorias, implementação de BD e acesso facilitado aos processos).
+[x] *Principais processos identificados* — Identificados no Item 4 (da solicitação do orçamento até a instalação e atualização do estoque).
+[x] *Problemas identificados* — Mapeados no Item 5 (falhas na visita técnica pré-obra, falta de colaborador específico no estoque, retrabalho admin/vendas).
+[x] **Necessidades identificadas* — Mapeadas no Item 5 junto às consequências dos problemas (modernização, integração, controle de dados).
+
+* **REQUISITOS**
+[x] **Requisitos funcionais* — Definidos do RF1 ao RF9 no Item 6.
+[x] **Requisitos não funcionais* — Definidos do RNF1 ao RNF5 no Item 7.
+[x] *Regras de negócio* — Definidas da RN1 à RN4 no Item 8.
+[x] **Restrições organizacionais* — Definidas no Item 9 (permissões de aprovação/alteração apenas para Gerente/Dono).
+[x] *Políticas organizacionais* — Definidas no Item 9 (limite de desconto de 5% a 10%, sinal de 35%, LGPD, conferência mensal de estoque).
+
+* **PROCESSOS**
+[x] **Principais processos representados* — Descreve a jornada completa (Atendimento $\rightarrow$ Medição $\rightarrow$ Venda $\rightarrow$ Instalação $\rightarrow$ Estoque).
+[x] **Fluxogramas construídos* — Referenciado no Item 10.
+[x] *Fluxogramas coerentes com os requisitos* — Alinhados com a jornada descrita no Item 4 e requisitos de orçamento (RF5) e estoque (RF4).
+[x] **Integração entre processos demonstrada* — Conexão clara entre vendas, financeiro, logística de instalação e atualização de estoque.
+
+* **DADOS**
+[x] **Entidades identificadas* — 10 entidades/associativas listadas no Item 12.
+[x] **Atributos identificados* — Detalhados por entidade no Item 13.
+[x] *Atributos descritos* — Tipos e descrições detalhadas no Dicionário de Dados do Item 11.
+[x] **Dicionário conceitual elaborado* — Tabela completa apresentada no Item 11.
+
+* **RELACIONAMENTOS**
+[x] **Relacionamentos identificados* — Detalhados no Item 14.
+[x] *Cardinalidades definidas* — Especificadas no Item 15 (ex: 1:1, 1:N, N:M).
+[x] *Os dois sentidos dos relacionamentos foram analisados* — Analisados nas descrições de cardinalidade do Item 15.
+[x] **Relacionamentos N:N foram verificados* — Identificados e tratados via entidades associativas Contém e Realiza.
+[x] *Atributos dos relacionamentos foram analisados* — Atributo Subtotal associado à Realiza e Quantidade_De_Produtos associada à Contém.
+
+* **DER**
+[x] *Todas as entidades estão representadas* — Conforme especificações dos Itens 12, 13 e 16.
+[x] *Atributos estão associados corretamente* — Mapeamento PK/FK estruturado no Item 13 e Dicionário de Dados.
+[x] *Relacionamentos estão representados* — Mapeados estruturalmente no Item 14.
+[x] **Cardinalidades estão representadas* — Definidas formalmente no Item 15.
+[x] *O modelo é coerente com as regras* — Atende a todas as regras organizacionais e de negócio (sinal de pagamento, restrição de lote, estoque).
+[x] *O modelo demonstra integração* — Centralização em Pessoa ligando Clientes, Funcionários, Fornecedores e Vendas.
+[x] *O modelo pode evoluir nas próximas etapas* — Modelagem conceitual pronta para derivação do Modelo Lógico, Normalização e DDL.
+
+* **DOCUMENTAÇÃO**
+[x] *README organizado* — Estrutura sequencial do documento (1 ao 18).
+[x] *DER anexado ao repositório* — Referenciado no Item 16.
+[x] *Dicionário anexado/documentado* — Estruturado na tabela do Item 11.
+[x] **Fluxogramas anexados/documentados* — Referenciado no Item 10.
+[x] *Justificativas técnicas incluídas* — Detalhadas tecnicamente no Item 17.
+[x] **GitHub organizado* — Pronto para inclusão no repositório do projeto.
+[x] *Todos os integrantes contribuíram para o projeto* — Trabalho em grupo validado pela contextualização da empresa no Item 3.
