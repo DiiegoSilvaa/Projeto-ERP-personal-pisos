@@ -6,7 +6,7 @@
 * Diego Silva - RGM: 47855533
 * Ester Mari de Souza - RGM: 47487135
 * Felipe Dyonisio da Silva Veiga - RGM: 45698732
-* Guilherme de Aquino Campos - RGM: 48183939
+** Guilherme de Aquino Campos - RGM: 48183939
 * Julia Lafaelly Frazão Nunes - RGM: 48127507
 * Marcos Murilo Fernandes da Silva - RGM: 48159786
 * Jhenifer Rosa Cambell - RGM: 47794992
