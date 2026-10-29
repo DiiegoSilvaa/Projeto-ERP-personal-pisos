@@ -5,7 +5,7 @@
 * Caua Hernandes Honorato - RGM: 47863617
 * Diego Silva - RGM: 47855533
 * Ester Mari de Souza - RGM: 47487135
-* Felipe Dyonisio da Silva Veiga - RGM: 45698732
+* Felipe Dyonisio da Silva Veiga - RGM: 45698723
 * Guilherme de Aquino Campos - RGM: 48183939
 * Julia Lafaelly Frazão Nunes - RGM: 48127507
 * Marcos Murilo Fernandes da Silva - RGM: 48159786
