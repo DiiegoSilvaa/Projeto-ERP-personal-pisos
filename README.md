@@ -65,7 +65,7 @@ De acordo com as informações passadas pelo dono não é.
 * **Existem erros de cadastro?**
 Raramente. 
 * **É difícil acompanhar estoque, vendas, clientes ou funcionários?**
-Não, desde que esteja tudo devidamente cadastrado. Porém hoje o estoque é algo que dá um pouco mais de trabalho pois a empresa não possui um colaborador específico organizar/catalogar. 
+Não, desde que esteja tudo devidamente cadastrado. Porém hoje o estoque é algo que dá um pouco mais de trabalho pois a empresa não possui um colaborador específico para organizar/catalogar. 
 * **Existem problemas para gerar relatórios?**
 Não. 
 * **PROBLEMAS E NECESSIDADES**
@@ -101,7 +101,7 @@ Não.
 * **RF6:** O sistema deve permitir especificar o estilo de decoração desejado.
 * **RF7:** O sistema deve registrar todo o processo, desde a compra do material até a sua venda final.
 * **RF8:** O sistema deve registrar quais produtos estão disponíveis para venda.
-* **RF9:** O sistema deve calcular o valor total da venda considerando a quantidade de serviços e materiais.
+* **RF9:** O sistema deve calcular o valor total da venda, considerando a quantidade e valores dos serviços e materiais.
 
 ---
 
@@ -124,25 +124,25 @@ Não.
 
 ## 9. Identifique as restrições e políticas organizacionais
 * **Quem pode aprovar uma operação?**
-Apenas os Gerente/Dono podem realizar operações. 
+Apenas os Gerentes/Dono podem realizar operações. 
 
 * **Quem pode alterar determinado cadastro?**
 Todos os cadastros podem ser editados pelos clientes, porém somente o gerente pode excluir as informações. 
 
 * **Limites de desconto?**
-Toda compra possui um limite de 5 à10% de desconto baseado no valor total da compra. 
+Toda compra possui um limite de 5 a 10% de desconto baseado no valor total da compra. 
 
 * **Condições de pagamento?**
-É possível pagar a vista ou parcelado (sendo no parcelado necessário um sinal de 35% e o restante pode ser feito em até 10x sem juros). 
+É possível pagar à vista ou parcelado (sendo no parcelado necessário um sinal de 35% e o restante pode ser feito em até 10x sem juros). 
 
 * **Regras de cancelamento**
-As regras de cancelamento seguem o Código de Defesa do Consumidor, sendo 7 dias para devolução total do valor gasto e caso já tenha havido algum valor gasto com compra de material, isso será negociado diretamente com o cliente. 
+As regras de cancelamento seguem o Código de Defesa do Consumidor, sendo 7 dias para devolução total do valor gasto, caso já tenha havido algum valor gasto com compra de material, isso será negociado diretamente com o cliente. 
 
 * **Políticas de estoque**
-O estoque é conferido uma vez por mês e é abastecido conforme fazem as vendas, pois a loja não trabalha com estoque de todos os produtos. 
+O estoque é conferido uma vez por mês e é abastecido conforme a realização das vendas, pois a loja não trabalha com estoque de todos os produtos. 
 
 * **Regras de acesso às informações**
-A loja segue a LGPD - Lei Geral de Proteção de Dados, ou seja, ela informa para que os dados dos clientes serão utilizados, coleta apenas as informações necessárias e possui medidas de segurança contra o vazamento de dados. 
+A loja segue a LGPD - Lei Geral de Proteção de Dados, ou seja, ela informa onde serão utilizados os dados dos clientes, coleta apenas as informações necessárias e possui medidas de segurança contra o vazamento de dados. 
 
 * **Existe alguma decisão da empresa que precisa ser respeitada pelo sistema?**
 Sim, algumas coisas são permitidas apenas com autorização do gerente. Como: 
