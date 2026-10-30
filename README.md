@@ -171,38 +171,54 @@ Sim, algumas coisas são permitidas apenas com autorização do gerente. Como:
 | **Cliente** | `CPF` | CPF da pessoa associada | **FK** referenciando `Pessoa(CPF)` |
 | **Funcionário** | `ID_Funcionário` | Identificador do funcionário | **PK** |
 | **Funcionário** | `Cargo` | Função na empresa | Ex: Vendedor, Gerente |
-| **Funcionário** | `Salario` | Remuneração mensal | Valor monetário positivo |
 | **Funcionário** | `Setor` | Setor de atuação | Ex: Vendas, Logística |
 | **Funcionário** | `CPF` | CPF da pessoa associada | **FK** referenciando `Pessoa(CPF)` |
-| **Fornecedor** | `Código_Fornecedor` | Identificador do fornecedor | **PK** |
+| **Fornecedor** | `ID_Fornecedor` | Identificador do fornecedor | **PK** |
 | **Fornecedor** | `Matéria-Prima` | Descrição do insumo | Texto |
 | **Fornecedor** | `Custo_Unitario` | Custo de aquisição do item | Valor monetário |
 | **Fornecedor** | `CPF` | Documento do responsável/empresa | **FK** referenciando `Pessoa(CPF)` |
 | **Compra** | `ID_Compra` | Registro da ordem de compra | **PK** |
-| **Compra** | `Código_Fornecedor` | Código do fornecedor | **FK** referenciando `Fornecedor` |
+| **Compra** | `ID_Fornecedor` | Código do fornecedor | **FK** referenciando `Fornecedor` |
 | **Compra** | `Total_Gasto` | Valor gasto na compra | Valor monetário |
-| **Produto** | `Código_Produto` | Código identificador do produto | **PK** |
+| **Produto** | `ID_Produto` | Código identificador do produto | **PK** |
 | **Produto** | `Descrição` | Especificação técnica e nome | Texto |
 | **Produto** | `Valor_Unitario` | Preço de venda ao consumidor | Valor monetário |
-| **Estoque** | `Código_Produto` | Código do produto em estoque | **PK / FK** referenciando `Produto` |
+| **Produto** | `ID_Fornecedor` | Código do fornecedor | **FK** referenciando `Fornecedor` |
+| **Estoque** | `ID_Produto` | Código do produto em estoque | **FK** referenciando `Produto` |
 | **Estoque** | `Informação` | Detalhes do lote e armazenamento | Texto |
-| **Estoque** | `Quantidade_De_Cada_Produto` | Unidades/m² em estoque | Numérico inteiro/decimal |
+| **Estoque** | `Quantidade` | Unidades/m² em estoque | Numérico inteiro/decimal |
 | **Estoque** | `Abastecimento` | Frequência de reposição | Semanal ou Mensal |
-| **Pedido** | `Código_Pedido` | Identificador único do pedido | **PK** |
-| **Pedido** | `Data_De_Entrega` | Data prevista de instalação/entrega | Formato Data |
-| **Pedido** | `Pagamento_Total` | Valor final do pedido | Valor monetário |
+| **Pedido** | `ID_Pedido` | Identificador único do pedido | **PK** |
+| **Pedido** | `ID_Cliente` | Código do cliente | **FK** referenciando `Cliente` |
+| **Pedido** | `ID_Funcionário` | Identificador do funcionário | **FK** referenciando `Produto` |
+| **Pedido** | `Data_Entrega` | Data prevista de entrega | Formato Data |
+| **Pedido** | `Data_Visita` | Data prevista de instalação | Formato Data |
+| **Pedido** | `Total_Recebido` | Valor final do pedido | Valor monetário |
+| **Pedido** | `Pago` | quantia paga | valor monetário |
+| **Pedido** | `Descrição_Projeto` | descrição do projeto | inteiro obrigatório |
 | **Pedido** | `Acréscimos` | Custos extras (frete/mão de obra) | Valor monetário |
+| **Pedido** | `Acréscimo_Motivo` | motivação | caractere |
 | **Realiza** | `ID_Cliente` | Código do cliente | **FK** referenciando `Cliente` |
 | **Realiza** | `Código_Pedido` | Código do pedido | **FK** referenciando `Pedido` |
 | **Realiza** | `Subtotal` | Valor acumulado do cliente no pedido | Atributo próprio do relacionamento |
 | **Contém** | `Código_Pedido` | Código do pedido | **FK** referenciando `Pedido` |
 | **Contém** | `Código_Produto` | Código do produto | **FK** referenciando `Produto` |
 | **Contém** | `Quantidade_De_Produtos` | Quantidade comprada do produto | Numérico |
+| **Movimentação** | `ID_Movimentação` | Identificador único da movimentação | **PK** |
+| **Movimentação** | `ID_Funcionário` | Identificador do funcionário | **FK** referenciando `Produto` |
+| **Movimentação** | `ID_Produto` | Código do produto em estoque | **FK** referenciando `Produto` |
+| **Movimentação** | `Data_Movimentação` | data da movimentação | data | 
+| **Movimentação** | `Quantidade_Abastecida` | quantidade abastecida | inteiro obrigatório |
+| **Financeiro** | `ID_Transição` | Identificador único das transações | **PK** |
+| **Financeiro** | `Dinheiro_Conta` | quantidade monetária em conta | inteiro e obrigatório |
+| **Financeiro** | `Saída` | identificador das saídas | inteiro |
+| **Financeiro** | `Entrada` | Identificador das entradas | inteiro |
+| **Financeiro** | `Motivo` | motivação das transações | caractere obrigatório |
 
 ---
 
 ## 12. Entidades
-`Pessoa` – `Cliente` – `Funcionário` – `Fornecedor` – `Compra` – `Produto` – `Estoque` – `Pedido` – `Realiza` – `Contém`
+`Pessoa` – `Cliente` – `Funcionário` – `Fornecedor` – `Compra` – `Produto` – `Estoque` – `Pedido` – `Realiza` – `Contém`- 'Financeiro'- 'Movimentação'
 
 ---
 
@@ -217,6 +233,8 @@ Sim, algumas coisas são permitidas apenas com autorização do gerente. Como:
 * **Contém:** `Código_Pedido (FK)` – `Código_Produto (FK)` – `Quantidade_De_Produtos`
 * **Pedido:** `Código_Pedido (PK)` – `Data_De_Entrega` – `Pagamento_Total` – `Acréscimos`
 * **Realiza:** `ID_Cliente (FK)` – `Código_Pedido (FK)` – `Subtotal`
+* **Financeiro** 'Motivo' - 'Entrada' - 'Saída' - 'Dinheiro_conta' - 'ID_transação (PK)'
+* **Movimentação** 'Quantidade_Abastecida' - 'Data_Movimento' - 'ID_Produto (FK)' - 'ID_Funcionario (FK)' - 'ID_Movimentação (PK)'
 
 ---
 
