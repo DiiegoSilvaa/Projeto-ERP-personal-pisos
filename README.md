@@ -218,7 +218,7 @@ Sim, algumas coisas são permitidas apenas com autorização do gerente. Como:
 ---
 
 ## 12. Entidades
-`Pessoa` – `Cliente` – `Funcionário` – `Fornecedor` – `Compra` – `Produto` – `Estoque` – `Pedido` – `Realiza` – `Contém`- 'Financeiro'- 'Movimentação'
+`Pessoa` – `Cliente` – `Funcionário` – `Fornecedor` – `Compra` – `Produto` – `Estoque` – `Pedido` – `Realiza` – `Contém`- `Financeiro`- `Movimentação`
 
 ---
 
@@ -233,8 +233,8 @@ Sim, algumas coisas são permitidas apenas com autorização do gerente. Como:
 * **Contém:** `Código_Pedido (FK)` – `Código_Produto (FK)` – `Quantidade_De_Produtos`
 * **Pedido:** `Código_Pedido (PK)` – `Data_De_Entrega` – `Pagamento_Total` – `Acréscimos`
 * **Realiza:** `ID_Cliente (FK)` – `Código_Pedido (FK)` – `Subtotal`
-* **Financeiro** 'Motivo' - 'Entrada' - 'Saída' - 'Dinheiro_conta' - 'ID_transação (PK)'
-* **Movimentação** 'Quantidade_Abastecida' - 'Data_Movimento' - 'ID_Produto (FK)' - 'ID_Funcionario (FK)' - 'ID_Movimentação (PK)'
+* **Financeiro** `Motivo` - `Entrada` - `Saída` - `Dinheiro_conta` - `ID_transação (PK)`
+* **Movimentação** `Quantidade_Abastecida` - `Data_Movimento` - `ID_Produto (FK)` - `ID_Funcionario (FK)` - `ID_Movimentação (PK)`
 
 ---
 
