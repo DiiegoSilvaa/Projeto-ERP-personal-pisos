@@ -106,12 +106,19 @@ Não.
 ---
 
 ## 7. Requisitos não funcionais
-* **RNF1:** O sistema deve realizar backup diário automático dos dados.
-* **RNF2:** O sistema deve responder às requisições do usuário em tempo hábil (meta de até 0,5 segundos por clique).
-* **RNF3:** O sistema deve manter alta disponibilidade (24 horas por dia, 7 dias por semana).
-* **RNF4:** O sistema deve possuir interface responsiva (compatível com dispositivos móveis e desktops).
-* **RNF5:** O sistema deve estar em conformidade com as diretrizes da LGPD, garantindo o controle de acesso e sigilo das informações dos clientes.
-
+* **RNF1** – O sistema deve fazer backup dos dados todos os dias à 00:00 (meia noite) ou sempre que houver uma atualização. 
+* **RNF2** - O sistema deve funcionar 24/7 (24 horas por dia durante 7 dias por semana). 
+* **RNF3** - O sistema deve exigir autenticação por login e senha para permitir o acesso às funcionalidades restritas. 
+* **RNF4** - O sistema deve controlar o acesso às informações de acordo com o perfil do usuário, como administrador, designer de interiores e funcionário. 
+* **RNF5** - Os dados pessoais dos clientes devem ser protegidos de acordo com a Lei Geral de Proteção de Dados (LGPD). 
+* **RNF6** - O sistema deve utilizar um banco de dados relacional para garantir a organização e a integridade das informações cadastradas. 
+* **RNF7** - O sistema deve validar os dados inseridos nos formulários, impedindo o cadastro de informações em formatos inválidos. 
+* **RNF8** - Os valores monetários devem ser armazenados e processados com precisão decimal, evitando erros de arredondamento nos cálculos financeiros. 
+* **RNF9** - O sistema deve manter um padrão de nomenclatura para tabelas, campos e relacionamentos do banco de dados, facilitando sua manutenção. 
+* **RNF10** - O código-fonte do sistema deve ser organizado e documentado para facilitar futuras correções e atualizações. 
+* **RNF11** - O sistema deve registrar logs de erros e falhas técnicas para facilitar a identificação e a correção de problemas. 
+* **RNF12** - O sistema deve permitir a manutenção e a atualização de seus componentes sem comprometer a integridade dos dados armazenados.
+  
 ---
  
 ## 8. Regras de negócio
