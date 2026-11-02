@@ -352,7 +352,7 @@ Sim, algumas coisas são permitidas apenas com autorização do gerente. Como:
 ---
 
 ## 16. Diagrama Entidade-Relacionamento (DER)
-![Diagrama Entidade Relacionamento](img/der.png)
+![Diagrama Entidade Relacionamento](img/DER.png)
 
 ---
 
