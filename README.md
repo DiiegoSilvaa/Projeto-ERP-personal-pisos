@@ -358,21 +358,24 @@ Sim, algumas coisas são permitidas apenas com autorização do gerente. Como:
 
 ## 17 – Justificativas técnicas das principais decisões de modelagem
 
-1. Pessoa como entidade central de cadastro, com Cliente, Funcionário e Fornecedor como especializações
+### 1. Pessoa como entidade central de cadastro, com Cliente, Funcionário e Fornecedor como especializações
+Observou que Cliente, Funcionário e Fornecedor possuem em comum os mesmos dados pessoais: `CPF`, `Nome`, `Email`, `Telefone` e `Data_Nascimento`. Por conta disso, optou por concentrar essas informações em uma única entidade, denominada **Pessoa**, de modo que cada papel passasse a armazenar somente os atributos que são próprios, como `Cargo` e `Salário`, no caso do Funcionário. O vínculo entre as entidades é estabelecido por meio do `CPF`, que atua como chave primária (`PK`) em **Pessoa** e como chave estrangeira (`FK`) nas outras. Essa solução evita a repetição de dados pessoais e permite que um mesmo indivíduo desempenhe mais de um papel no sistema sem a necessidade de ser cadastrado novamente.
 
-Observou que Cliente, Funcionário e Fornecedor possuem em comum os mesmos dados pessoais: CPF, Nome, Email, Telefone e Data_Nascimento. Por conta disso, optou por concentrar essas informações em uma única entidade, denominada Pessoa, de modo que cada papel passasse a armazenar somente os atributos que são próprios, como Cargo e Salário, no caso do Funcionário. O vínculo entre as entidades é estabelecido por meio do CPF, que atua como chave primária (PK) em Pessoa e como chave estrangeira (FK) nas outras. Essa solução evita a repetição de dados pessoais e permite que um mesmo indivíduo desempenhe mais de um papel no sistema sem a necessidade de ser cadastrado novamente.
 
-2. Entidades associativas Contém e Realiza
 
-Um pedido pode conter diversos produtos e, por outro lado, um mesmo produto pode figurar em vários pedidos, caracterizando um relacionamento muitos para muitos. Para resolver essa situação, criou a entidade associativa Contém, responsável por registrar a Quantidade_De_Produtos referente a cada item do pedido. Já a entidade Realiza estabelece a ligação entre o Cliente e o Pedido, armazenando o Subtotal da compra. Dessa forma, as informações da venda são devidamente registradas sem que haja duplicação de dados nas tabelas Pedido e Produto.
+### 2. Entidades associativas Contém e Realiza
+Um pedido pode conter diversos produtos e, por outro lado, um mesmo produto pode figurar em vários pedidos, caracterizando um relacionamento muitos para muitos. Para resolver essa situação, criou a entidade associativa **Contém**, responsável por registrar a `Quantidade_De_Produtos` referente a cada item do pedido. Já a entidade **Realiza** estabelece a ligação entre o Cliente e o Pedido, armazenando o `Subtotal` da compra. Dessa forma, as informações da venda são devidamente registradas sem que haja duplicação de dados nas tabelas Pedido e Produto.
 
-3. Separação entre Produto e Estoque
 
-A entidade Produto reúne os dados estáveis do catálogo, isto é, Descrição e Valor_Unitario, ao passo que a entidade Estoque concentra as informações sujeitas a alterações frequentes, a saber, Informação, Quantidade_De_Cada_Produto e Abastecimento. Esta separação está alinhada à rotina da empresa, que realiza a conferência do estoque mensalmente e o reabastece de acordo com o volume de vendas. Assim, o saldo pode ser atualizado sem que seja necessário alterar o cadastro do produto. O relacionamento entre as duas entidades é do tipo 1 pra 1, uma vez que cada produto possui exatamente um registro de estoque.
 
-4. Código_Produto como chave primária de Produto
+### 3. Separação entre Produto e Estoque
+A entidade **Produto** reúne os dados estáveis do catálogo, isto é, `Descrição` e `Valor_Unitario`, ao passo que a entidade **Estoque** concentra as informações sujeitas a alterações frequentes, a saber, `Informação`, `Quantidade_De_Cada_Produto` e `Abastecimento`. Esta separação está alinhada à rotina da empresa, que realiza a conferência do estoque mensalmente e o reabastece de acordo com o volume de vendas. Assim, o saldo pode ser atualizado sem que seja necessário alterar o cadastro do produto. O relacionamento entre as duas entidades é do tipo 1 para 1, uma vez que cada produto possui exatamente um registro de estoque.
 
-O Código_Produto foi definido como chave primária (PK) por identificar cada produto de maneira única, permitindo que as demais entidades façam referência a ele sem ambiguidade. Esse atributo é utilizado como chave estrangeira (FK) na entidade Contém e como chave primária e estrangeira (PK/FK) na entidade Estoque, o que assegura que somente existam itens de pedido e registros de estoque associados a produtos previamente cadastrados.
+
+
+### 4. Código_Produto como chave primária de Produto
+O `Código_Produto` foi definido como chave primária (`PK`) por identificar cada produto de maneira única, permitindo que as demais entidades façam referência a ele sem ambiguidade. Esse atributo é utilizado como chave estrangeira (`FK`) na entidade **Contém** e como chave primária e estrangeira (`PK/FK`) na entidade **Estoque**, o que assegura que somente existam itens de pedido e registros de estoque associados a produtos previamente cadastrados.
+
 ---
 
 ## 18. Conclusão
