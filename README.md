@@ -93,15 +93,21 @@ Não.
 ---
 
 ## 6. Requisitos funcionais
-* **RF1:** O sistema deve permitir o cadastro de dados pessoais do cliente (E-mail, celular, Nome completo, CPF/CNPJ, Data de nascimento e CEP) com verificação em duas etapas.
-* **RF2:** O sistema deve permitir a emissão de relatórios.
-* **RF3:** O sistema deve prover um canal de contato direto entre cliente e atendente.
-* **RF4:** O sistema deve permitir o controle de estoque.
-* **RF5:** O sistema deve permitir a criação de orçamentos prévios de serviço, com validade configurável (ex: 7 dias).
-* **RF6:** O sistema deve permitir especificar o estilo de decoração desejado.
-* **RF7:** O sistema deve registrar todo o processo, desde a compra do material até a sua venda final.
-* **RF8:** O sistema deve registrar quais produtos estão disponíveis para venda.
-* **RF9:** O sistema deve calcular o valor total da venda, considerando a quantidade e valores dos serviços e materiais.
+* **RF1** - Cadastro com os dados pessoais do cliente, como e-mail pessoal, número de celular, nome completo, CPF ou CNPJ, data de nascimento e CEP, juntamente com a verificação em dois fatores durante a autenticação.
+* **RF2** - Todo projeto realizado deve ter a emissão de um relatório contendo informações desde o planejamento até a instalação, incluindo materiais utilizados, custos e etapas concluídas.
+* **RF3** - O sistema deve disponibilizar um canal de contato entre cliente e atendente para dúvidas e solicitações de alterações referentes ao projeto, mantendo o histórico das conversas.
+* **RF4** - O sistema deve permitir o controle da entrada e saída de produtos do estoque, registrando as quantidades movimentadas e os respectivos valores financeiros.
+* **RF5** - O sistema deve permitir que o atendente crie orçamentos prévios de serviços para os clientes, informando o período previsto de execução, os itens desejados, os valores e um prazo de validade configurável (ex.: 7 dias).
+* **RF6** - O sistema deve registrar o estilo de decoração desejado pelo cliente, incluindo preferências de cores, materiais e acabamentos, para auxiliar na elaboração do projeto e do orçamento.
+* **RF7** - O sistema deve registrar todas as etapas do processo, desde a compra dos materiais com os fornecedores até a instalação dos produtos no ambiente do cliente.
+* **RF8** - O sistema deve permitir o cadastro e a atualização da disponibilidade comercial dos produtos, indicando quais podem ou não ser vendidos, independentemente da quantidade física disponível em estoque.
+* **RF9** - Toda alteração no status de um projeto deve ser registrada no sistema, incluindo a data da alteração, o status e o usuário responsável, utilizando estados previamente definidos, como em planejamento, em execução, aguardando aprovação ou concluído.
+* **RF10** - A aprovação de um projeto pelo cliente deve ser registrada com a data da aprovação, a identificação do cliente responsável e a versão do projeto aprovada.
+* **RF11** - O sistema deve permitir o cadastro de fornecedores, armazenando informações como nome, CPF ou CNPJ, telefone, endereço e materiais fornecidos.
+* **RF12** - O sistema deve permitir o registro e o acompanhamento dos pagamentos relacionados aos projetos, incluindo valores pagos, valores pendentes, datas de pagamento e situação financeira de cada pedido.
+* **RF13** - O sistema deve permitir o agendamento de medições, visitas técnicas e instalações, registrando data, horário, endereço, profissional responsável e projeto relacionado.
+* **RF14** - O sistema deve permitir o cadastro e a atualização de produtos e materiais, armazenando informações como código identificador, descrição, categoria, unidade de medida, preço e fornecedor relacionado, quando aplicável.
+
 
 ---
 
@@ -117,7 +123,7 @@ Não.
 * **RNF9** - O sistema deve manter um padrão de nomenclatura para tabelas, campos e relacionamentos do banco de dados, facilitando sua manutenção. 
 * **RNF10** - O código-fonte do sistema deve ser organizado e documentado para facilitar futuras correções e atualizações. 
 * **RNF11** - O sistema deve registrar logs de erros e falhas técnicas para facilitar a identificação e a correção de problemas. 
-* **RNF12** - O sistema deve permitir a manutenção e a atualização de seus componentes sem comprometer a integridade dos dados armazenados.
+* **RNF12** - O sistema deve permitir a manutenção e a atualização de seus componentes sem comprometer a integridade dos dados armazenados.](https://github.com/DiiegoSilvaa/Projeto-ERP-personal-pisos)
   
 ---
  
