@@ -162,7 +162,7 @@ Não.
 * **RN8:** Todo projeto deve possuir uma data de início prevista e uma data de entrega prevista.
 * **RN9:** Cada ambiente deve possuir medidas registradas antes da definição dos materiais e móveis que serão utilizados no projeto.
 * **RN10:** Todo material cadastrado no banco de dados deve possuir código único, descrição e preço de custo.
-* **RN11:**A quantidade de materiais disponível em estoque deve ser atualizada sempre que houver entrada por compra ou saída para uso em um projeto.
+* **RN11:** A quantidade de materiais disponível em estoque deve ser atualizada sempre que houver entrada por compra ou saída para uso em um projeto.
 * **RN12:** Toda compra de materiais realizada pela empresa deve estar vinculada a um fornecedor já cadastrado no sistema.
 * **RN13:** Cada pedido de compra de materiais deve registrar a data da compra, os materiais adquiridos, suas quantidades e os respectivos valores unitários.
 * **RN14:** Todo serviço de instalação contratado deve estar vinculado a um projeto específico e possuir descrição, valor e prazo previsto para execução.
