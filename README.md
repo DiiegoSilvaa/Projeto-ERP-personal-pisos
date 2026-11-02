@@ -306,7 +306,7 @@ Sim, algumas coisas são permitidas apenas com autorização do gerente. Como:
   * **Atributo de Ligação:** `Id_produto` / Associação entre as entradas de compra e o produto.
 * **Produto – Estoque**
   * **Entidades Relacionadas:** Produto e Estoque
-  * **Tipo de Relacionamento:** Entidade Forte → Entidade Fraca
+  * **Tipo de Relacionamento:** Relacionamento entre duas Entidades Fortes
   * **Descrição:** Associa as informações físicas de estoque e periodicidade de abastecimento ao produto correspondente.
   * **Atributo de Ligação:** `Id_produto` (PK em Estoque e FK/Referência em Produto)
 
