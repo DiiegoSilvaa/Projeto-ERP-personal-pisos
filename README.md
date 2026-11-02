@@ -356,21 +356,23 @@ Sim, algumas coisas são permitidas apenas com autorização do gerente. Como:
 
 ---
 
-## 17. Justificativas técnicas das principais decisões de modelagem
+## 17 – Justificativas técnicas das principais decisões de modelagem
 
-1. **Modelagem de `Pessoa` como Entidade Forte e `Cliente`/`Funcionário`/`Fornecedor` como Entidades Fracas:**  
-   A entidade forte `Pessoa` centraliza os atributos genéricos (`CPF`, `Nome`, `Email`, `Telefone`, `Data_Nascimento`)[cite: 4]. As entidades `Cliente`, `Funcionário` e `Fornecedor` conectam-se a ela utilizando o `CPF` como Chave Estrangeira (FK)[cite: 4], garantindo a integridade dos cadastros no banco de dados e evitando a duplicação de informações pessoais.
+1. Pessoa como entidade central de cadastro, com Cliente, Funcionário e Fornecedor como especializações
 
-2. **Criação das Entidades Associativas (`Contém` e `Realiza`):**  
-   Para resolver os relacionamentos de múltiplos registros sem gerar duplicidade de dados:
-   * **`Contém`:** Surge da relação entre `Pedido` e `Produto` para armazenar a `Quantidade_De_Produtos` comprada de cada item no pedido[cite: 4].
-   * **`Realiza`:** Conecta `Cliente` a `Pedido`, armazenando o atributo próprio `Subtotal` gerado pela transação do cliente.
+Observou que Cliente, Funcionário e Fornecedor possuem em comum os mesmos dados pessoais: CPF, Nome, Email, Telefone e Data_Nascimento. Por conta disso, optou por concentrar essas informações em uma única entidade, denominada Pessoa, de modo que cada papel passasse a armazenar somente os atributos que são próprios, como Cargo e Salário, no caso do Funcionário. O vínculo entre as entidades é estabelecido por meio do CPF, que atua como chave primária (PK) em Pessoa e como chave estrangeira (FK) nas outras. Essa solução evita a repetição de dados pessoais e permite que um mesmo indivíduo desempenhe mais de um papel no sistema sem a necessidade de ser cadastrado novamente.
 
-3. **Separação entre `Produto` (Entidade Forte) e `Estoque` (Entidade Fraca / Relação 1:1):**  
-   O cadastro do `Produto` mantém apenas dados fixos do catálogo (`Descrição`, `Valor_Unitario`)[cite: 4]. O `Estoque` é tratado de forma vinculada (1:1) para controlar dados operacionais e dinâmicos (`Informação`, `Quantidade_De_Cada_Produto`, `Abastecimento`)[cite: 4], permitindo atualizar lotes e saldos sem alterar as especificações fixas do produto.
+2. Entidades associativas Contém e Realiza
 
-4. **Definição de `Código_Produto` como Chave Primária (PK) em `Produto`:**  
-   Garante que a entidade `Produto` seja independente (entidade forte) e que seu código identificador único possa ser referenciado corretamente como Chave Estrangeira (FK) nas entidades associativas (`Contém`, `Compra`) e no `Estoque`[cite: 4].
+Um pedido pode conter diversos produtos e, por outro lado, um mesmo produto pode figurar em vários pedidos, caracterizando um relacionamento muitos para muitos. Para resolver essa situação, criou a entidade associativa Contém, responsável por registrar a Quantidade_De_Produtos referente a cada item do pedido. Já a entidade Realiza estabelece a ligação entre o Cliente e o Pedido, armazenando o Subtotal da compra. Dessa forma, as informações da venda são devidamente registradas sem que haja duplicação de dados nas tabelas Pedido e Produto.
+
+3. Separação entre Produto e Estoque
+
+A entidade Produto reúne os dados estáveis do catálogo, isto é, Descrição e Valor_Unitario, ao passo que a entidade Estoque concentra as informações sujeitas a alterações frequentes, a saber, Informação, Quantidade_De_Cada_Produto e Abastecimento. Esta separação está alinhada à rotina da empresa, que realiza a conferência do estoque mensalmente e o reabastece de acordo com o volume de vendas. Assim, o saldo pode ser atualizado sem que seja necessário alterar o cadastro do produto. O relacionamento entre as duas entidades é do tipo 1 pra 1, uma vez que cada produto possui exatamente um registro de estoque.
+
+4. Código_Produto como chave primária de Produto
+
+O Código_Produto foi definido como chave primária (PK) por identificar cada produto de maneira única, permitindo que as demais entidades façam referência a ele sem ambiguidade. Esse atributo é utilizado como chave estrangeira (FK) na entidade Contém e como chave primária e estrangeira (PK/FK) na entidade Estoque, o que assegura que somente existam itens de pedido e registros de estoque associados a produtos previamente cadastrados.
 ---
 
 ## 18. Conclusão
