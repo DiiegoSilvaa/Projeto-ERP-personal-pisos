@@ -153,24 +153,24 @@ Não.
 ## 8. Regras de negócio
 
 * **RN1:** Um mesmo item não pode ser vendido para mais de um cliente.
-* **RN2:** O pagamento de um pedido deve exigir um sinal de 35% do valor total da compra, pago à vista. O valor restante poderá ser parcelado em até 10 vezes sem juros.
-* **RN3:** O valor total do pedido deve considerar o material escolhido, os custos de compra com fornecedores para reposição do estoque, a quantidade de material necessária (calculada com base nas medidas do ambiente) e o serviço de instalação.
-* **RN4:** O cancelamento poderá ser realizado em até 7 dias após o pagamento do sinal, com direito à devolução do valor pago. Após esse prazo, o valor não será devolvido, sendo permitido ao cliente escolher outro produto ou material.
+* **RN2:** Um sinal de 35% do valor total da compra deve ser pago à vista, e o restante pode ser parcelado em até 10x sem juros.
+* **RN3:** Calcular o valor total do pedido levando em consideração o material escolhido, a compra com o fornecedor para preenchimento do estoque, a quantidade de material que será usado (com base na medida feita) e a instalação.
+* **RN4:** Cancelamento em até 7 dias após o pagamento do sinal, caso contrário o valor pago não é devolvido e o cliente escolhe outro produto ou material se desejar.
 * **RN5:** Todo cliente deve possuir um cadastro único no sistema, contendo nome completo, CPF ou CNPJ, telefone, e-mail e endereço.
 * **RN6:** Cada projeto de design de interiores deve estar vinculado a um único cliente responsável pela contratação do serviço.
-* **RN7:** Um cliente pode contratar vários projetos de design de interiores, porém cada projeto deve possuir um identificador único.
+* **RN7:**  Um cliente pode contratar vários projetos de design de interiores, mas cada projeto deve possuir um identificador único.
 * **RN8:** Todo projeto deve possuir uma data de início prevista e uma data de entrega prevista.
-* **RN9:** As medidas de cada ambiente devem ser registradas antes da definição dos materiais e móveis que serão utilizados no projeto.
-* **RN10:** Todo material cadastrado no sistema deve possuir um código único, uma descrição e um preço de custo.
-* **RN11:** A quantidade de materiais disponível no estoque deve ser atualizada automaticamente sempre que houver entrada por compra ou saída para utilização em um projeto.
-* **RN12:** Toda compra de materiais realizada pela empresa deve estar vinculada a um fornecedor previamente cadastrado no sistema.
-* **RN13:** Cada pedido de compra de materiais deve registrar a data da compra, os materiais adquiridos, suas respectivas quantidades e valores unitários.
+* **RN9:** Cada ambiente deve possuir medidas registradas antes da definição dos materiais e móveis que serão utilizados no projeto.
+* **RN10:** Todo material cadastrado no banco de dados deve possuir código único, descrição e preço de custo.
+* **RN11:**A quantidade de materiais disponível em estoque deve ser atualizada sempre que houver entrada por compra ou saída para uso em um projeto.
+* **RN12:** Toda compra de materiais realizada pela empresa deve estar vinculada a um fornecedor já cadastrado no sistema.
+* **RN13:** Cada pedido de compra de materiais deve registrar a data da compra, os materiais adquiridos, suas quantidades e os respectivos valores unitários.
 * **RN14:** Todo serviço de instalação contratado deve estar vinculado a um projeto específico e possuir descrição, valor e prazo previsto para execução.
-* **RN15:** Todo funcionário ou profissional responsável por um projeto deve estar cadastrado no sistema e possuir uma função definida.
-* **RN16:** Um projeto pode possuir vários profissionais responsáveis por diferentes atividades, porém cada atividade deve ter um responsável definido.
-* **RN17:** Toda alteração no status de um projeto deve ser registrada no sistema, utilizando estados previamente definidos, como: em planejamento, em execução, aguardando aprovação ou concluído.
-* **RN18:** A aprovação de um projeto pelo cliente deve ser registrada no sistema, contendo a data da aprovação e a identificação do projeto correspondente.
-* **RN19:** Um mesmo item não pode estar alocado em mais de um estoque simultaneamente.
+* **RN15:** Cada funcionário ou profissional responsável por um projeto deve estar cadastrado no sistema e possuir uma função definida.
+* **RN16:** Um projeto pode ter vários profissionais responsáveis por diferentes atividades, mas cada atividade deve possuir um responsável definido.
+* **RN17:** Toda alteração no status de um projeto deve ser registrada no sistema, utilizando estados previamente definidos, como em planejamento, em execução, aguardando aprovação ou concluído.
+* **RN18:** A aprovação de um projeto pelo cliente deve ser registrada com a data da aprovação e a identificação do projeto correspondente.
+* **RN19:** Um mesmo item não pode estar em outro estoque ao mesmo tempo.
 
 ---
 
