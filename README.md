@@ -265,29 +265,29 @@ Sim, algumas coisas são permitidas apenas com autorização do gerente. Como:
 
 * **Pessoa – Cliente**
   * **Entidades Relacionadas:** Pessoa e Cliente
-  * **Tipo de Relacionamento:** Entidade Forte → Entidade Fraca
-  * **Descrição:** A entidade Cliente depende da entidade genérica Pessoa para existência dos dados pessoais.
+  * **Tipo de Relacionamento:** Especialização/Herança
+  * **Descrição:** A entidade Cliente deriva da entidade genérica Pessoa
   * **Atributo de Ligação:** `CPF` (Chave Primária em Pessoa e Chave Estrangeira em Cliente)
 
 * **Pessoa – Funcionário**
   * **Entidades Relacionadas:** Pessoa e Funcionário
-  * **Tipo de Relacionamento:** Entidade Forte → Entidade Fraca
-  * **Descrição:** A entidade Funcionário depende da entidade genérica Pessoa para existência dos dados pessoais.
+  * **Tipo de Relacionamento:** Especialização/Herança
+  * **Descrição:** A entidade Funcionário deriva da entidade genérica Pessoa
   * **Atributo de Ligação:** `CPF` (Chave Primária em Pessoa e Chave Estrangeira em Funcionário)
 
 * **Pessoa – Fornecedor**
   * **Entidades Relacionadas:** Pessoa e Fornecedor
-  * **Tipo de Relacionamento:** Entidade Forte → Entidade Fraca
-  * **Descrição:** Vincula o cadastro do fornecedor à pessoa física responsável.
+  * **Tipo de Relacionamento:** Associação/Especialização
+  * **Descrição:** Vincula o cadastro de Fornecedor á pessoa física responsável 
   * **Atributo de Ligação:** `CPF` (Chave Primária em Pessoa e Chave Estrangeira em Fornecedor)
 
-* **Cliente – Pedidos (via "Realiza")**
+* **Cliente – Pedidos (via Tabela/Relacionamento "Realiza")**
   * **Entidades Relacionadas:** Cliente e Pedido (ligadas através da entidade associativa Realiza)
   * **Tipo de Relacionamento:** Entidade Associativa
-  * **Descrição:** Registra quais pedidos foram realizados por determinado cliente, armazenando o subtotal.
+  * **Descrição:** Registra quais pedidos foram realizados por determinado cliente, Contendo o subtotal.
   * **Atributos de Ligação:** `ID_Cliente (FK)` e `Código_Pedido (FK)`
 
-* **Pedido – Produto (via "Contém")**
+* **Pedido – Produto (via Tabela/Realacionamento "Contém")**
   * **Entidades Relacionadas:** Pedido e Produto (ligadas através da entidade associativa Contém)
   * **Tipo de Relacionamento:** Entidade Associativa
   * **Descrição:** Associa os produtos que fazem parte de cada pedido e a respectiva quantidade de itens.
@@ -295,21 +295,20 @@ Sim, algumas coisas são permitidas apenas com autorização do gerente. Como:
 
 * **Fornecedor – Compra**
   * **Entidades Relacionadas:** Fornecedor e Compra
-  * **Tipo de Relacionamento:** Entidade Forte → Entidade Fraca
+  * **Tipo de Relacionamento:** 1:N Entidade Forte/Entidade Fraca
   * **Descrição:** Registra as compras efetuadas junto a um fornecedor e o total gasto.
-  * **Atributo de Ligação:** `Código_Fornecedor` (PK em Fornecedor e FK em Compra)
+  * **Atributo de Ligação:** `Id_fornecedor` (PK em Fornecedor e FK em Compra)
 
 * **Compra – Produto**
   * **Entidades Relacionadas:** Compra e Produto
-  * **Tipo de Relacionamento:** Entidades Fortes (Relacionadas entre si)
-  * **Descrição:** Associa as aquisições/compras efetuadas aos produtos do catálogo que alimentam o estoque.
-  * **Atributo de Ligação:** `Código_Produto` (Ligação entre as ordens de compra e os produtos)
-
+  * **Tipo de Relacionamento:** Entidades Fortes/Entidade Fraca
+  * **Descrição:** Associa as aquisições/compras efetuadas aos produtos do catálogo.
+  * **Atributo de Ligação:** `Id_produto` / Associação entre as entradas de compra e o produto.
 * **Produto – Estoque**
   * **Entidades Relacionadas:** Produto e Estoque
   * **Tipo de Relacionamento:** Entidade Forte → Entidade Fraca
-  * **Descrição:** Associa as informações físicas de estoque, quantidade e periodicidade de abastecimento ao produto correspondente.
-  * **Atributo de Ligação:** `Código_Produto` (PK em Produto e PK/FK em Estoque)
+  * **Descrição:** Associa as informações físicas de estoque e periodicidade de abastecimento ao produto correspondente.
+  * **Atributo de Ligação:** `Id_produto` (PK em Estoque e FK/Referência em Produto)
 
 ---
 
