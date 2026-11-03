@@ -1,20 +1,6 @@
 # Projeto ERP — Personal Pisos
 
-## 1. Identificação da equipe
-* Bruna Soares de Almeida - RGM: 47552158
-* Caua Hernandes Honorato - RGM: 47863617
-* Diego Silva - RGM: 47855533
-* Ester Mari de Souza - RGM: 47487135
-* Felipe Dyonisio da Silva Veiga - RGM: 45698732
-* Guilherme de Aquino Campos - RGM: 48183939
-* Julia Lafaelly Frazão Nunes - RGM: 48127507
-* Marcos Murilo Fernandes da Silva - RGM: 48159786
-* Jhenifer Rosa Cambell - RGM: 47794992
-* Miguel Galego Meira - RGM: 47963662
-
----
-
-## 2. Caracterização da empresa
+## 1. Caracterização da empresa
 * **Nome:** Personal Pisos
 * **Segmento:** Design de Interiores e Acabamentos.
 * **O que vende:** Soluções completas para ambientação, indo desde revestimentos de piso (vinílicos, laminados, porcelanatos) e proteção solar (persianas, cortinas sob medida) até elementos de decoração geral (papel de parede, tapetes, painéis).
@@ -25,12 +11,12 @@
 
 ---
 
-## 3. Justificativa da escolha
+## 2. Justificativa da escolha
 O grupo escolheu a empresa porque ela já possui um site que precisa de melhorias estruturais e da implementação de um banco de dados organizado para gerenciar suas informações. Além disso, há facilidade de acesso aos processos reais, pois uma das integrantes atua diretamente na empresa.
 
 ---
 
-## 4. Identifique os processos de negócio.
+## 3. Identifique os processos de negócio.
 Cliente -- Solicita orçamento -- Projeto -- Agendamento de visita -- Medição -- Compra de produtos -- Pagamento -- Entrega --Montagem/Instalação -- Atualização do estoque. 
  
 * **Quem participa?**
@@ -46,7 +32,7 @@ O ambiente do cliente é montado/instalado e a venda é concluída.
 
 ---
 
-## 5. Identifique os problemas e necessidades
+## 4. Identifique os problemas e necessidades
 * **Onde existe retrabalho?**  
 Nas obras, quando acontece algum problema em uma instalação ou serviço que não foi considerado a possibilidade durante a visita técnica realizada pré obra; 
 Na administração ou venda quando não foram seguidos todos os processos necessários. 
@@ -92,7 +78,7 @@ Não.
 
 ---
 
-## 6. Requisitos funcionais
+## 5. Requisitos funcionais
 
 * **RF1** - Cadastro com os dados pessoais do cliente, como e-mail pessoal, número de celular, nome completo, CPF ou CNPJ, data de nascimento e CEP, juntamente com a verificação em dois fatores durante a autenticação.
 
@@ -122,7 +108,7 @@ Não.
 
 * **RF14** - O sistema deve permitir o cadastro e a atualização de produtos e materiais, armazenando informações como código identificador, descrição, categoria, unidade de medida, preço e fornecedor relacionado, quando aplicável.
 
-## 7. Requisitos não funcionais
+## 6. Requisitos não funcionais
 
 * **RNF1** – O sistema deve fazer backup dos dados todos os dias à 00:00 (meia noite) ou sempre que houver uma atualização. 
 
@@ -150,7 +136,7 @@ Não.
   
 ---
  
-## 8. Regras de negócio
+## 7. Regras de negócio
 
 * **RN1:** Um mesmo item não pode ser vendido para mais de um cliente.
 * **RN2:** Um sinal de 35% do valor total da compra deve ser pago à vista, e o restante pode ser parcelado em até 10x sem juros.
@@ -174,7 +160,7 @@ Não.
 
 ---
 
-## 9. Identifique as restrições e políticas organizacionais
+## 8. Identifique as restrições e políticas organizacionais
 * **Quem pode aprovar uma operação?**
 Apenas os Gerentes/Dono podem realizar operações. 
 
@@ -204,12 +190,12 @@ Sim, algumas coisas são permitidas apenas com autorização do gerente. Como:
 
 ---
 
-## 10. Fluxograma dos principais processos
+## 9. Fluxograma dos principais processos
 ![Fluxograma de Processos](img/fluxograma.png)
 
 ---
 
-## 11. Dicionário de dados conceitual
+## 10. Dicionário de dados conceitual
 
 | Entidade | Atributo | Descrição | Regra / Observação |
 | :--- | :--- | :--- | :--- |
@@ -269,12 +255,12 @@ Sim, algumas coisas são permitidas apenas com autorização do gerente. Como:
 
 ---
 
-## 12. Entidades
+## 11. Entidades
 `Pessoa` – `Cliente` – `Funcionário` – `Fornecedor` – `Compra` – `Produto` – `Estoque` – `Pedido` – `Realiza` – `Contém`- `Financeiro`- `Movimentação`
 
 ---
 
-## 13. Atributos
+## 12. Atributos
 * **Pessoa:** `Nome` – `Email` – `Telefone` – `Data_Nascimento` – `CPF (PK)`
 * **Cliente:** `ID_Cliente (PK)` – `Endereço` – `CPF (FK)`
 * **Funcionário:** `ID_Funcionário (PK)` – `Cargo` – `Salario` – `CPF (FK)` – `Setor`
@@ -290,7 +276,7 @@ Sim, algumas coisas são permitidas apenas com autorização do gerente. Como:
 
 ---
 
-## 14. Relacionamentos
+## 13. Relacionamentos
 
 * **Pessoa – Cliente**
   * **Entidades Relacionadas:** Pessoa e Cliente
@@ -341,7 +327,7 @@ Sim, algumas coisas são permitidas apenas com autorização do gerente. Como:
 
 ---
 
-## 15. Cardinalidades
+## 14. Cardinalidades
 
 * **Pessoa -> Cliente / Funcionário / Fornecedor:** `(0,1)` para `(1,1)`. Uma pessoa pode ser cadastrada como cliente, funcionário ou fornecedor.
 * **Cliente -> Pedido ("Realiza"):** `(0,N)` para `(1,1)`. Um cliente pode realizar zero ou vários pedidos, mas um pedido pertence a um único cliente.
@@ -351,12 +337,12 @@ Sim, algumas coisas são permitidas apenas com autorização do gerente. Como:
 
 ---
 
-## 16. Diagrama Entidade-Relacionamento (DER)
+## 15. Diagrama Entidade-Relacionamento (DER)
 ![Diagrama Entidade Relacionamento](img/DER.png)
 
 ---
 
-## 17 – Justificativas técnicas das principais decisões de modelagem
+## 16 – Justificativas técnicas das principais decisões de modelagem
 
 ### 1. Pessoa como entidade central de cadastro, com Cliente, Funcionário e Fornecedor como especializações
 Observou que Cliente, Funcionário e Fornecedor possuem em comum os mesmos dados pessoais: `CPF`, `Nome`, `Email`, `Telefone` e `Data_Nascimento`. Por conta disso, optou por concentrar essas informações em uma única entidade, denominada **Pessoa**, de modo que cada papel passasse a armazenar somente os atributos que são próprios, como `Cargo` e `Salário`, no caso do Funcionário. O vínculo entre as entidades é estabelecido por meio do `CPF`, que atua como chave primária (`PK`) em **Pessoa** e como chave estrangeira (`FK`) nas outras. Essa solução evita a repetição de dados pessoais e permite que um mesmo indivíduo desempenhe mais de um papel no sistema sem a necessidade de ser cadastrado novamente.
